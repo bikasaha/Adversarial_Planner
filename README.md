@@ -1,6 +1,9 @@
 # Adversarial Planner: On the Adversarial Planning Capabilities of LLMs.
 
-**Adversarial Planner** is a lightweight Python framework for evaluating whether LLM agents can perform adaptive adversarial planning under uncertainty, contradiction, and changing cyber state.
+
+This repository contains the implementation and experimental framework for our paper **"On the Adversarial Planning Capabilities of LLMs"**, published in the *ARES 2026 International Workshops* proceedings (Springer LNCS). The paper introduces **Adversarial Planner**, a framework for evaluating the ability of Large Language Models (LLMs) to perform adaptive adversarial planning under uncertainty.
+
+📄 **Published paper:** [On the Adversarial Planning Capabilities of LLMs](https://doi.org/10.1007/978-3-032-35579-9_4)
 
 The project uses a dataset of partially observable organizational cyber scenarios. Each scenario contains visible information shown to the LLM, hidden environment truth used by the simulator, environment rules, and an objective. The framework runs turn-based planning where an agent selects an action, receives evidence from the simulator, updates belief state, and replans.
 
