@@ -1,4 +1,4 @@
-# Adversarial Planner Framework Project
+# Adversarial Planner: On the Adversarial Planning Capabilities of LLMs.
 
 **Adversarial Planner** is a lightweight Python framework for evaluating whether LLM agents can perform adaptive adversarial planning under uncertainty, contradiction, and changing cyber state.
 
