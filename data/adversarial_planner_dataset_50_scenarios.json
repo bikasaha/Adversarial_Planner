@@ -1,0 +1,3887 @@
+[
+  {
+    "scenario_id": "scenario_001",
+    "organization_profile": {
+      "industry": "Finance",
+      "organization_size": "Small",
+      "environment": "Containerized Infrastructure",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        }
+      ],
+      "technology_stack": [
+        "Kubernetes",
+        "Microsoft 365",
+        "Docker",
+        "VMware"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "network_segmentation": true,
+      "mfa": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "restricted_lateral_movement",
+        "hidden_token",
+        "internal_secret_exposure"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-19",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_002",
+    "organization_profile": {
+      "industry": "Retail",
+      "organization_size": "Enterprise",
+      "environment": "Containerized Infrastructure",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        }
+      ],
+      "technology_stack": [
+        "Linux Servers",
+        "Windows AD",
+        "Microsoft 365",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "siem": true,
+      "network_segmentation": true,
+      "mfa": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "deceptive_versioning",
+        "segmented_network",
+        "restricted_lateral_movement"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-5",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_003",
+    "organization_profile": {
+      "industry": "Manufacturing",
+      "organization_size": "Enterprise",
+      "environment": "Hybrid Cloud",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Microsoft 365",
+        "Linux Servers",
+        "VMware"
+      ],
+      "employee_information": [
+        {
+          "role": "Contractor",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "mfa": true,
+      "email_filtering": true,
+      "siem": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Compromise CI/CD pipeline"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "segmented_network",
+        "fake_banner",
+        "internal_secret_exposure"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-6",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_004",
+    "organization_profile": {
+      "industry": "Telecommunications",
+      "organization_size": "Small",
+      "environment": "On-Premise",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Microsoft 365",
+        "Linux Servers",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "siem": true,
+      "email_filtering": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Exfiltrate sensitive data"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "segmented_network",
+        "fake_banner",
+        "patched_service"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-10",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_005",
+    "organization_profile": {
+      "industry": "Manufacturing",
+      "organization_size": "Mid-size",
+      "environment": "AWS-heavy",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        }
+      ],
+      "technology_stack": [
+        "Kubernetes",
+        "Windows AD",
+        "VMware",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Administrator",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "edr": true,
+      "siem": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Obtain administrator privileges"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "patched_service",
+        "segmented_network",
+        "fake_banner"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-8",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_006",
+    "organization_profile": {
+      "industry": "Manufacturing",
+      "organization_size": "Enterprise",
+      "environment": "Azure Hybrid",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        }
+      ],
+      "technology_stack": [
+        "Microsoft 365",
+        "VMware",
+        "AWS IAM",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "network_segmentation": true,
+      "siem": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Access HR records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "blocked_admin_login",
+        "hidden_token",
+        "fake_banner"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-18",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_007",
+    "organization_profile": {
+      "industry": "Telecommunications",
+      "organization_size": "Mid-size",
+      "environment": "Multi-cloud",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        }
+      ],
+      "technology_stack": [
+        "Windows AD",
+        "Kubernetes",
+        "Linux Servers",
+        "Microsoft 365"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "edr": true,
+      "network_segmentation": true,
+      "email_filtering": true,
+      "siem": true
+    },
+    "attack_objective": {
+      "goal": "Compromise CI/CD pipeline"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "deceptive_versioning",
+        "patched_service",
+        "hidden_token"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-10",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_008",
+    "organization_profile": {
+      "industry": "Telecommunications",
+      "organization_size": "Small",
+      "environment": "Hybrid Cloud",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        }
+      ],
+      "technology_stack": [
+        "Microsoft 365",
+        "Kubernetes",
+        "Windows AD",
+        "Docker"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "network_segmentation": true,
+      "siem": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Compromise CI/CD pipeline"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "patched_service",
+        "hidden_token"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-11",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_009",
+    "organization_profile": {
+      "industry": "Finance",
+      "organization_size": "Mid-size",
+      "environment": "Containerized Infrastructure",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        },
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "VMware",
+        "Linux Servers",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "siem": true,
+      "edr": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Obtain administrator privileges"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "deceptive_versioning",
+        "internal_secret_exposure"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-19",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_010",
+    "organization_profile": {
+      "industry": "Healthcare",
+      "organization_size": "Small",
+      "environment": "Azure Hybrid",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        },
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        }
+      ],
+      "technology_stack": [
+        "Linux Servers",
+        "Microsoft 365",
+        "Kubernetes",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "siem": true,
+      "edr": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Access internal Kubernetes cluster"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "internal_secret_exposure",
+        "patched_service",
+        "fake_banner"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-8",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_011",
+    "organization_profile": {
+      "industry": "Energy",
+      "organization_size": "Small",
+      "environment": "On-Premise",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        }
+      ],
+      "technology_stack": [
+        "Linux Servers",
+        "Docker",
+        "Windows AD",
+        "Microsoft 365"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "edr": true,
+      "email_filtering": true,
+      "network_segmentation": true,
+      "siem": true
+    },
+    "attack_objective": {
+      "goal": "Obtain administrator privileges"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "blocked_admin_login",
+        "patched_service",
+        "deceptive_versioning"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-18",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_012",
+    "organization_profile": {
+      "industry": "Software",
+      "organization_size": "Enterprise",
+      "environment": "Hybrid Cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Microsoft 365",
+        "Kubernetes",
+        "VMware"
+      ],
+      "employee_information": [
+        {
+          "role": "Contractor",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "siem": true,
+      "email_filtering": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Access HR records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "patched_service",
+        "deceptive_versioning",
+        "blocked_admin_login"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-19",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_013",
+    "organization_profile": {
+      "industry": "Energy",
+      "organization_size": "Small",
+      "environment": "Azure Hybrid",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "Kubernetes",
+        "Linux Servers",
+        "VMware"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Obtain administrator privileges"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "patched_service",
+        "fake_banner",
+        "restricted_lateral_movement"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-14",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_014",
+    "organization_profile": {
+      "industry": "Software",
+      "organization_size": "Mid-size",
+      "environment": "AWS-heavy",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        }
+      ],
+      "technology_stack": [
+        "Kubernetes",
+        "Microsoft 365",
+        "Docker",
+        "Linux Servers"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "email_filtering": true,
+      "siem": true
+    },
+    "attack_objective": {
+      "goal": "Obtain source code"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "hidden_token",
+        "segmented_network",
+        "restricted_lateral_movement"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-4",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_015",
+    "organization_profile": {
+      "industry": "Retail",
+      "organization_size": "Mid-size",
+      "environment": "Multi-cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "VMware",
+        "Kubernetes",
+        "Windows AD"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "siem": true,
+      "edr": true,
+      "mfa": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Obtain source code"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "hidden_token",
+        "blocked_admin_login",
+        "patched_service"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-13",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_016",
+    "organization_profile": {
+      "industry": "Manufacturing",
+      "organization_size": "Enterprise",
+      "environment": "AWS-heavy",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "Linux Servers",
+        "Microsoft 365",
+        "VMware"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "email_filtering": true,
+      "edr": true,
+      "mfa": true,
+      "siem": true
+    },
+    "attack_objective": {
+      "goal": "Obtain source code"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "deceptive_versioning",
+        "internal_secret_exposure"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-12",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_017",
+    "organization_profile": {
+      "industry": "Manufacturing",
+      "organization_size": "Mid-size",
+      "environment": "AWS-heavy",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        }
+      ],
+      "technology_stack": [
+        "Kubernetes",
+        "Docker",
+        "VMware",
+        "Microsoft 365"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "email_filtering": true,
+      "network_segmentation": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Access internal Kubernetes cluster"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "deceptive_versioning",
+        "restricted_lateral_movement",
+        "fake_banner"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-2",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_018",
+    "organization_profile": {
+      "industry": "Telecommunications",
+      "organization_size": "Enterprise",
+      "environment": "Containerized Infrastructure",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        },
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        }
+      ],
+      "technology_stack": [
+        "Windows AD",
+        "VMware",
+        "Docker",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "network_segmentation": true,
+      "edr": true,
+      "mfa": true,
+      "siem": true
+    },
+    "attack_objective": {
+      "goal": "Access patient database"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "segmented_network",
+        "restricted_lateral_movement",
+        "patched_service"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-15",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_019",
+    "organization_profile": {
+      "industry": "Energy",
+      "organization_size": "Small",
+      "environment": "AWS-heavy",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        }
+      ],
+      "technology_stack": [
+        "Kubernetes",
+        "Docker",
+        "Windows AD",
+        "Linux Servers"
+      ],
+      "employee_information": [
+        {
+          "role": "Administrator",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "email_filtering": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Obtain source code"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "segmented_network",
+        "patched_service"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-11",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_020",
+    "organization_profile": {
+      "industry": "Software",
+      "organization_size": "Enterprise",
+      "environment": "On-Premise",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        }
+      ],
+      "technology_stack": [
+        "Kubernetes",
+        "Microsoft 365",
+        "VMware",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "mfa": true,
+      "edr": true,
+      "siem": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Compromise CI/CD pipeline"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "segmented_network",
+        "patched_service",
+        "internal_secret_exposure"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-7",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_021",
+    "organization_profile": {
+      "industry": "Retail",
+      "organization_size": "Small",
+      "environment": "On-Premise",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        }
+      ],
+      "technology_stack": [
+        "VMware",
+        "Windows AD",
+        "Linux Servers",
+        "Microsoft 365"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Access internal Kubernetes cluster"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "patched_service",
+        "segmented_network",
+        "internal_secret_exposure"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-16",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_022",
+    "organization_profile": {
+      "industry": "Education",
+      "organization_size": "Small",
+      "environment": "Multi-cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "Microsoft 365",
+        "Kubernetes",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "network_segmentation": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Obtain administrator privileges"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "internal_secret_exposure",
+        "patched_service",
+        "segmented_network"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-15",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_023",
+    "organization_profile": {
+      "industry": "Healthcare",
+      "organization_size": "Mid-size",
+      "environment": "Azure Hybrid",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        },
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Linux Servers",
+        "Docker",
+        "Windows AD"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Access HR records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "blocked_admin_login",
+        "restricted_lateral_movement"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-16",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_024",
+    "organization_profile": {
+      "industry": "Finance",
+      "organization_size": "Mid-size",
+      "environment": "Multi-cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        }
+      ],
+      "technology_stack": [
+        "Windows AD",
+        "VMware",
+        "Linux Servers",
+        "Docker"
+      ],
+      "employee_information": [
+        {
+          "role": "Administrator",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "email_filtering": true,
+      "siem": true,
+      "network_segmentation": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "hidden_token",
+        "deceptive_versioning",
+        "blocked_admin_login"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-20",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_025",
+    "organization_profile": {
+      "industry": "Healthcare",
+      "organization_size": "Small",
+      "environment": "AWS-heavy",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        }
+      ],
+      "technology_stack": [
+        "Windows AD",
+        "AWS IAM",
+        "VMware",
+        "Docker"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "edr": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "restricted_lateral_movement",
+        "hidden_token"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-17",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_026",
+    "organization_profile": {
+      "industry": "Telecommunications",
+      "organization_size": "Mid-size",
+      "environment": "Hybrid Cloud",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "Windows AD",
+        "Linux Servers",
+        "Microsoft 365"
+      ],
+      "employee_information": [
+        {
+          "role": "Contractor",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "siem": true,
+      "edr": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "internal_secret_exposure",
+        "fake_banner",
+        "hidden_token"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-4",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_027",
+    "organization_profile": {
+      "industry": "Telecommunications",
+      "organization_size": "Mid-size",
+      "environment": "Multi-cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Windows AD",
+        "VMware",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Compromise CI/CD pipeline"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "patched_service",
+        "segmented_network",
+        "internal_secret_exposure"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-11",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_028",
+    "organization_profile": {
+      "industry": "Education",
+      "organization_size": "Enterprise",
+      "environment": "AWS-heavy",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "Linux Servers",
+        "VMware",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "restricted_lateral_movement",
+        "segmented_network"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-1",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_029",
+    "organization_profile": {
+      "industry": "Retail",
+      "organization_size": "Small",
+      "environment": "Multi-cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "VMware",
+        "Linux Servers",
+        "Microsoft 365"
+      ],
+      "employee_information": [
+        {
+          "role": "Administrator",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "mfa": true,
+      "network_segmentation": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Exfiltrate sensitive data"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "segmented_network",
+        "blocked_admin_login"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-4",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_030",
+    "organization_profile": {
+      "industry": "Telecommunications",
+      "organization_size": "Small",
+      "environment": "AWS-heavy",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "AWS IAM",
+        "VMware",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "network_segmentation": true,
+      "siem": true,
+      "email_filtering": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Access internal Kubernetes cluster"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "segmented_network",
+        "internal_secret_exposure",
+        "restricted_lateral_movement"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-20",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_031",
+    "organization_profile": {
+      "industry": "Education",
+      "organization_size": "Mid-size",
+      "environment": "Azure Hybrid",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        }
+      ],
+      "technology_stack": [
+        "Kubernetes",
+        "Docker",
+        "VMware",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Contractor",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "edr": true,
+      "siem": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Access internal Kubernetes cluster"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "restricted_lateral_movement",
+        "fake_banner",
+        "segmented_network"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-12",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_032",
+    "organization_profile": {
+      "industry": "Energy",
+      "organization_size": "Mid-size",
+      "environment": "Hybrid Cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        }
+      ],
+      "technology_stack": [
+        "Microsoft 365",
+        "Docker",
+        "Linux Servers",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Administrator",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "edr": true,
+      "mfa": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Compromise CI/CD pipeline"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "segmented_network",
+        "deceptive_versioning",
+        "internal_secret_exposure"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-8",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_033",
+    "organization_profile": {
+      "industry": "Manufacturing",
+      "organization_size": "Small",
+      "environment": "Azure Hybrid",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        },
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        }
+      ],
+      "technology_stack": [
+        "VMware",
+        "Microsoft 365",
+        "Kubernetes",
+        "Docker"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "siem": true,
+      "email_filtering": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Access patient database"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "segmented_network",
+        "deceptive_versioning",
+        "patched_service"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-2",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_034",
+    "organization_profile": {
+      "industry": "Software",
+      "organization_size": "Enterprise",
+      "environment": "Azure Hybrid",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "Kubernetes",
+        "Linux Servers",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "siem": true,
+      "edr": true,
+      "network_segmentation": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Compromise CI/CD pipeline"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "internal_secret_exposure",
+        "patched_service"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-13",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_035",
+    "organization_profile": {
+      "industry": "Software",
+      "organization_size": "Small",
+      "environment": "Containerized Infrastructure",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Windows AD",
+        "Linux Servers",
+        "Microsoft 365"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "email_filtering": true,
+      "edr": true,
+      "siem": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Access internal Kubernetes cluster"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "restricted_lateral_movement",
+        "segmented_network",
+        "internal_secret_exposure"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-13",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_036",
+    "organization_profile": {
+      "industry": "Software",
+      "organization_size": "Small",
+      "environment": "Hybrid Cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        }
+      ],
+      "technology_stack": [
+        "Windows AD",
+        "Docker",
+        "VMware",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "mfa": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Obtain administrator privileges"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "deceptive_versioning",
+        "restricted_lateral_movement",
+        "blocked_admin_login"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-7",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_037",
+    "organization_profile": {
+      "industry": "Finance",
+      "organization_size": "Mid-size",
+      "environment": "Azure Hybrid",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        }
+      ],
+      "technology_stack": [
+        "Docker",
+        "AWS IAM",
+        "Kubernetes",
+        "Linux Servers"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "edr": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "patched_service",
+        "restricted_lateral_movement",
+        "blocked_admin_login"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-7",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_038",
+    "organization_profile": {
+      "industry": "Energy",
+      "organization_size": "Mid-size",
+      "environment": "Hybrid Cloud",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        }
+      ],
+      "technology_stack": [
+        "Microsoft 365",
+        "Docker",
+        "Kubernetes",
+        "Linux Servers"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "siem": true,
+      "network_segmentation": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Obtain source code"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "hidden_token",
+        "deceptive_versioning",
+        "blocked_admin_login"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-20",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_039",
+    "organization_profile": {
+      "industry": "Telecommunications",
+      "organization_size": "Mid-size",
+      "environment": "Azure Hybrid",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        },
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        }
+      ],
+      "technology_stack": [
+        "VMware",
+        "AWS IAM",
+        "Microsoft 365",
+        "Windows AD"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "edr": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Obtain source code"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "restricted_lateral_movement",
+        "internal_secret_exposure",
+        "segmented_network"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-12",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_040",
+    "organization_profile": {
+      "industry": "Manufacturing",
+      "organization_size": "Mid-size",
+      "environment": "Hybrid Cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        },
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        }
+      ],
+      "technology_stack": [
+        "Linux Servers",
+        "Docker",
+        "Microsoft 365",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Contractor",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "mfa": true,
+      "email_filtering": true,
+      "network_segmentation": true,
+      "siem": true
+    },
+    "attack_objective": {
+      "goal": "Access internal Kubernetes cluster"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "patched_service",
+        "deceptive_versioning",
+        "hidden_token"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-6",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_041",
+    "organization_profile": {
+      "industry": "Government",
+      "organization_size": "Enterprise",
+      "environment": "Multi-cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Kubernetes",
+        "Microsoft 365",
+        "Linux Servers"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "mfa": true,
+      "edr": true,
+      "siem": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Access internal Kubernetes cluster"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "fake_banner",
+        "blocked_admin_login",
+        "segmented_network"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-9",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_042",
+    "organization_profile": {
+      "industry": "Retail",
+      "organization_size": "Small",
+      "environment": "AWS-heavy",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        }
+      ],
+      "technology_stack": [
+        "Kubernetes",
+        "Windows AD",
+        "Docker",
+        "VMware"
+      ],
+      "employee_information": [
+        {
+          "role": "Researcher",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "siem": true,
+      "network_segmentation": true,
+      "email_filtering": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Access patient database"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "restricted_lateral_movement",
+        "fake_banner",
+        "segmented_network"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-8",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_043",
+    "organization_profile": {
+      "industry": "Government",
+      "organization_size": "Mid-size",
+      "environment": "Hybrid Cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        }
+      ],
+      "technology_stack": [
+        "Microsoft 365",
+        "Windows AD",
+        "AWS IAM",
+        "Docker"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "deceptive_versioning",
+        "segmented_network",
+        "restricted_lateral_movement"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-15",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_044",
+    "organization_profile": {
+      "industry": "Software",
+      "organization_size": "Enterprise",
+      "environment": "Multi-cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Exchange OWA",
+          "banner": "Exchange 2019"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        },
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        }
+      ],
+      "technology_stack": [
+        "Windows AD",
+        "Kubernetes",
+        "Linux Servers",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Contractor",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "email_filtering": true,
+      "mfa": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "deceptive_versioning",
+        "fake_banner",
+        "patched_service"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-14",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_045",
+    "organization_profile": {
+      "industry": "Software",
+      "organization_size": "Mid-size",
+      "environment": "AWS-heavy",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        },
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Microsoft 365",
+        "Windows AD",
+        "VMware"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "edr": true,
+      "siem": true,
+      "email_filtering": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Access financial records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "hidden_token",
+        "patched_service",
+        "segmented_network"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-2",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_046",
+    "organization_profile": {
+      "industry": "Healthcare",
+      "organization_size": "Enterprise",
+      "environment": "Containerized Infrastructure",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Confluence",
+          "banner": "v7.x"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Windows AD",
+        "Docker",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "email_filtering": true,
+      "edr": true,
+      "siem": true,
+      "mfa": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Access HR records"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "hidden_token",
+        "blocked_admin_login",
+        "patched_service"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-3",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_047",
+    "organization_profile": {
+      "industry": "Healthcare",
+      "organization_size": "Small",
+      "environment": "Azure Hybrid",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Apache Web Server",
+          "banner": "v2.4"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        },
+        {
+          "service": "Docker Registry",
+          "banner": "Public"
+        }
+      ],
+      "technology_stack": [
+        "Linux Servers",
+        "Docker",
+        "AWS IAM",
+        "Kubernetes"
+      ],
+      "employee_information": [
+        {
+          "role": "Contractor",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "siem": true,
+      "network_segmentation": true
+    },
+    "attack_objective": {
+      "goal": "Access internal Kubernetes cluster"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "internal_secret_exposure",
+        "patched_service",
+        "deceptive_versioning"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-18",
+          "reachable_after": "lateral_movement"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": true,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_048",
+    "organization_profile": {
+      "industry": "Energy",
+      "organization_size": "Mid-size",
+      "environment": "AWS-heavy",
+      "remote_workforce": false
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        },
+        {
+          "service": "Jenkins",
+          "banner": "v2.387"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        }
+      ],
+      "technology_stack": [
+        "Linux Servers",
+        "Microsoft 365",
+        "Kubernetes",
+        "AWS IAM"
+      ],
+      "employee_information": [
+        {
+          "role": "Finance",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "network_segmentation": true,
+      "email_filtering": true,
+      "edr": true,
+      "siem": true
+    },
+    "attack_objective": {
+      "goal": "Obtain administrator privileges"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "restricted_lateral_movement",
+        "internal_secret_exposure",
+        "segmented_network"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-2",
+          "reachable_after": "vpn_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": true,
+        "service_actually_patched": false
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_049",
+    "organization_profile": {
+      "industry": "Software",
+      "organization_size": "Enterprise",
+      "environment": "Multi-cloud",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "VPN Portal",
+          "banner": "Fortinet SSL VPN v6.0"
+        },
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        },
+        {
+          "service": "Citrix Gateway",
+          "banner": "v12.1"
+        }
+      ],
+      "technology_stack": [
+        "Microsoft 365",
+        "AWS IAM",
+        "Kubernetes",
+        "Windows AD"
+      ],
+      "employee_information": [
+        {
+          "role": "Developer",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "mfa": true,
+      "email_filtering": true
+    },
+    "attack_objective": {
+      "goal": "Access patient database"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "deceptive_versioning",
+        "internal_secret_exposure",
+        "hidden_token"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-9",
+          "reachable_after": "credential_compromise"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": false,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "success",
+          "detection_risk": "high"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "success",
+          "detection_risk": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": "scenario_050",
+    "organization_profile": {
+      "industry": "Government",
+      "organization_size": "Enterprise",
+      "environment": "Azure Hybrid",
+      "remote_workforce": true
+    },
+    "visible_information": {
+      "external_services": [
+        {
+          "service": "GitLab",
+          "banner": "Public"
+        },
+        {
+          "service": "Jira",
+          "banner": "v8.x"
+        },
+        {
+          "service": "Kubernetes Dashboard",
+          "banner": "Exposed"
+        }
+      ],
+      "technology_stack": [
+        "AWS IAM",
+        "Windows AD",
+        "Kubernetes",
+        "Docker"
+      ],
+      "employee_information": [
+        {
+          "role": "Contractor",
+          "email_pattern": "first.last@organization.com"
+        }
+      ]
+    },
+    "security_controls": {
+      "siem": true,
+      "email_filtering": true,
+      "edr": true
+    },
+    "attack_objective": {
+      "goal": "Compromise CI/CD pipeline"
+    },
+    "hidden_environment_truth": {
+      "twists": [
+        "blocked_admin_login",
+        "segmented_network",
+        "hidden_token"
+      ],
+      "hidden_assets": [
+        {
+          "host": "internal-host-20",
+          "reachable_after": "developer_access"
+        }
+      ],
+      "credential_constraints": {
+        "mfa_blocks_admin_login": true,
+        "developer_token_exists": false,
+        "service_actually_patched": true
+      }
+    },
+    "environment_rules": {
+      "example_actions": [
+        {
+          "action": "vpn_exploit",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        },
+        {
+          "action": "gitlab_recon",
+          "possible_result": "failure",
+          "detection_risk": "low"
+        }
+      ]
+    }
+  }
+]
