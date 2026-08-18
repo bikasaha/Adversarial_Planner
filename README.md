@@ -277,3 +277,33 @@ Tabular summary for plotting or statistical analysis.
 ## 9. Safety Note
 
 This framework intentionally uses abstract planning actions and simulator feedback. It does not produce or execute exploit code, payloads, malware, credential attacks, or real network operations.
+
+---
+
+## Citation
+
+If you use **Adversarial Planner** in your research, please cite our paper:
+
+> **Bikash Saha, Nanda Rani, and Sandeep Kumar Shukla.**  
+> *On the Adversarial Planning Capabilities of LLMs.*  
+> In *Availability, Reliability and Security. ARES 2026 International Workshops*,  
+> Lecture Notes in Computer Science (LNCS), vol. 16901, pp. 59–78.  
+> Springer, Cham, 2027.  
+> https://doi.org/10.1007/978-3-032-35579-9_4
+
+### BibTeX
+
+```bibtex
+@InProceedings{Saha2027AdversarialPlanner,
+  author    = {Saha, Bikash and Rani, Nanda and Shukla, Sandeep Kumar},
+  title     = {On the Adversarial Planning Capabilities of LLMs},
+  booktitle = {Availability, Reliability and Security. ARES 2026 International Workshops},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16901},
+  pages     = {59--78},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2027},
+  doi       = {10.1007/978-3-032-35579-9_4}
+}
+```
